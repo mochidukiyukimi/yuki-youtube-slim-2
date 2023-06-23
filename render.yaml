@@ -7,4 +7,4 @@ services:
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn --port $PORT --host 0.0.0.0 main:app"
 envVars:
-  - key: PYTHON_VERSION value: 3.10
+  - key: PYTHON_VERSION value: 3.8.2
