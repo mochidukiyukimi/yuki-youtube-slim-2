@@ -177,10 +177,10 @@ template = Jinja2Templates(directory='templates').TemplateResponse
 
 @app.get("/", response_class=HTMLResponse)
 def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
-    if check_cokie(yuki):
-        response.set_cookie("yuki","True",max_age=60 * 60 * 24 * 7)
-        return template("home.html",{"request": request})
-    return redirect("/word")
+    if not(check_cokie(yuki)):
+        return redirect("/word")
+    response.set_cookie(key="yuki", value="True",max_age=7*24*60*60)
+    return template("home.html",{"request": request})
 
 @app.get('/watch', response_class=HTMLResponse)
 def video(v:str,response: Response,request: Request,yuki: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
