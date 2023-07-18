@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <title>英単語レベル</title>
     <script>function getlevel(){
-        if(document.getElementById('word').value == "yuki"){document.cookie = "yuki=True";}else{
+        if(document.getElementById('word').value == "yuki"){document.cookie = "yuki=True; path=/;";}else{
         let req = new XMLHttpRequest();
         req.addEventListener("load", function(){document.getElementById('info').textContent = this.responseText});
         req.open("GET", "/answer?q="+document.getElementById('word').value);
