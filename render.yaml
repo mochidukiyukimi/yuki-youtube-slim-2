@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: yuki-youtube-slim
+    name: yuki-tangolevel
     env: python
     region: Oregon
     plan: free
